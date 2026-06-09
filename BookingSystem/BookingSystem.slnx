@@ -3,4 +3,5 @@
   <Project Path="BookingSystem.Application/BookingSystem.Application.csproj" />
   <Project Path="BookingSystem.Core/BookingSystem.Core.csproj" />
   <Project Path="BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj" />
+  <Project Path="BookingSystem.UI/BookingSystem.UI.csproj" />
 </Solution>

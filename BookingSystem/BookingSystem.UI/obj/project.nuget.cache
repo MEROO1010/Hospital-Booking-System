@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VVubst4yYcg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\DELL\\C_sharp_project\\Hospital-Booking-System\\BookingSystem\\BookingSystem.UI\\BookingSystem.UI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.8\\microsoft.aspnetcore.app.internal.assets.10.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

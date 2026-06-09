@@ -1,0 +1,41 @@
+@page "/doctors"
+@inject HttpClient Http
+
+<h3>قائمة الأطباء</h3>
+
+@if (doctors == null)
+{
+    <p><em>جاري تحميل البيانات...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>التخصص</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var doctor in doctors)
+            {
+                <tr>
+                    <td>@doctor.Name</td>
+                    <td>@doctor.Specialty</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Doctor>? doctors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // جلب البيانات من الـ API
+        doctors = await Http.GetFromJsonAsync<List<Doctor>>("api/Doctors");
+    }
+
+    public class Doctor { public string Name { get; set; } = ""; public string Specialty { get; set; } = ""; }
+}
