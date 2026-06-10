@@ -1,0 +1,67 @@
+@page "/book/{DoctorId:int}"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<div class="container mt-4">
+    <h3>حجز موعد جديد</h3>
+    <hr />
+
+    <div class="card p-4 shadow-sm" style="max-width: 500px;">
+        <div class="mb-3">
+            <label class="form-label">رقم الطبيب المختار:</label>
+            <input class="form-control" value="@DoctorId" disabled />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">اسم المريض:</label>
+            <input class="form-control" @bind="newAppointment.PatientName" placeholder="أدخل اسمك الثلاثي" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">وقت البداية:</label>
+            <input type="datetime-local" class="form-control" @bind="newAppointment.StartTime" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">وقت النهاية:</label>
+            <input type="datetime-local" class="form-control" @bind="newAppointment.EndTime" />
+        </div>
+
+        <button class="btn btn-success w-100" @onclick="HandleBooking">تأكيد الحجز الآن</button>
+        <button class="btn btn-secondary w-100 mt-2" @onclick='() => Navigation.NavigateTo("/doctors")'>إلغاء</button>
+    </div>
+</div>
+
+@code {
+    [Parameter] public int DoctorId { get; set; } // استقبال الرقم من الرابط
+
+    private AppointmentModel newAppointment = new AppointmentModel();
+
+    protected override void OnInitialized()
+    {
+        // وضع قيم افتراضية للوقت (اليوم مثلاً)
+        newAppointment.DoctorId = DoctorId;
+        newAppointment.StartTime = DateTime.Now;
+        newAppointment.EndTime = DateTime.Now.AddMinutes(30);
+    }
+
+    private async Task HandleBooking()
+    {
+        // إرسال البيانات للـ API
+        var response = await Http.PostAsJsonAsync("api/Appointments", newAppointment);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine("تم الحجز بنجاح!");
+            Navigation.NavigateTo("/doctors"); // العودة لصفحة الأطباء بعد النجاح
+        }
+    }
+
+    public class AppointmentModel
+    {
+        public int DoctorId { get; set; }
+        public string PatientName { get; set; } = "";
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+    }
+}

@@ -1,0 +1,41 @@
+@page "/doctors"
+@inject HttpClient Http
+
+<h3>قائمة الأطباء</h3>
+
+@if (doctors == null)
+{
+    <p>جاري التحميل...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>التخصص</th>
+                <th>القسم</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var doctor in doctors)
+            {
+                <tr>
+                    <td>@doctor.GetProperty("Name")</td>
+                    <td>@doctor.GetProperty("Specialty")</td>
+                    <td>@doctor.GetProperty("DepartmentName")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<dynamic>? doctors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // استقبال البيانات كـ dynamic للتعامل مع الشكل الجديد الذي أرسله الـ API
+        doctors = await Http.GetFromJsonAsync<List<dynamic>>("api/Doctors");
+    }
+}

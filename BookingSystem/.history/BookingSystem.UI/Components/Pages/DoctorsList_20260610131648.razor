@@ -1,0 +1,66 @@
+@page "/doctors"
+@inject HttpClient Http
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>قائمة الأطباء المعتمدين</h3>
+        <a href="add-doctor" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i> إضافة طبيب جديد
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>الاسم</th>
+                        <th>التخصص</th>
+                        <th>القسم</th>
+                        <th class="text-center">إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var doctor in doctors)
+                    {
+                        <tr>
+                            <td class="fw-bold">@doctor.Name</td>
+                            <td><span class="badge bg-info text-dark">@doctor.Specialty</span></td>
+                            <td>@doctor.DepartmentName</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-warning me-2">تعديل</button>
+                                <button class="btn btn-sm btn-outline-danger">حذف</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+    // استخدمي الكلاس الذي أنشأناه بدلاً من dynamic
+    private List<DoctorDto>? doctors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try 
+        {
+            doctors = await Http.GetFromJsonAsync<List<DoctorDto>>("api/Doctors");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"خطأ في جلب البيانات: {ex.Message}");
+        }
+    }
+
+    // تأكدي من تعريف الكلاس هنا أو في ملف منفصل
+    public class DoctorDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = "";
+        public string Specialty { get; set; } = "";
+        public string DepartmentName { get; set; } = "";
+    }
+}

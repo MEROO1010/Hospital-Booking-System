@@ -24,7 +24,6 @@ C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSyste
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\scopedcss\Components\Layout\ReconnectModal.razor.rz.scp.css
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\scopedcss\bundle\BookingSystem.UI.styles.css
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\scopedcss\projectbundle\BookingSystem.UI.bundle.scp.css
-C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\compressed\hqavb37x5i-{0}-khy4lop6wu-khy4lop6wu.gz
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\compressed\3fp7dzm6k7-{0}-bqjiyaj88i-bqjiyaj88i.gz
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\compressed\7my77nnmwe-{0}-c2jlpeoesf-c2jlpeoesf.gz
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\compressed\a4pxjbxztq-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -84,3 +83,4 @@ C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSyste
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\BookingSystem.UI.pdb
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\BookingSystem.UI.genruntimeconfig.cache
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\ref\BookingSystem.UI.dll
+C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.UI\obj\Debug\net10.0\compressed\hqavb37x5i-{0}-ee30lnzb54-ee30lnzb54.gz

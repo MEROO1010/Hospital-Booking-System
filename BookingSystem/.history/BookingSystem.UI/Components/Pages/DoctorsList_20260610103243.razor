@@ -1,0 +1,59 @@
+@page "/doctors"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<h3>قائمة الأطباء</h3>
+
+@if (doctors == null)
+{
+    <p><em>جاري تحميل البيانات...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>التخصص</th>
+                <th>الإجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var doctor in doctors)
+            {
+                <tr>
+                    <td>@doctor.Name</td>
+                    <td>@doctor.Specialty</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => BookAppointment(doctor.Id)">
+                            حجز موعد
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Doctor>? doctors;
+
+    // الدالة المحدثة التي تقوم بالانتقال لصفحة الحجز
+    private void BookAppointment(int doctorId)
+    {
+        Navigation.NavigateTo($"/book/{doctorId}");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // تأكدي أن الـ URL للـ API صحيح (عادة ما يكون مساراً كاملاً أو نسبياً)
+        doctors = await Http.GetFromJsonAsync<List<Doctor>>("api/Doctors");
+    }
+
+    public class Doctor 
+    { 
+        public int Id { get; set; } 
+        public string Name { get; set; } = ""; 
+        public string Specialty { get; set; } = ""; 
+    }
+}

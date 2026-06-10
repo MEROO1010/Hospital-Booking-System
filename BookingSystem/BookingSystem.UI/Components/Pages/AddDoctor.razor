@@ -1,0 +1,46 @@
+@page "/add-doctor"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<h3>إضافة طبيب جديد</h3>
+
+<div class="mb-3">
+    <label>الاسم:</label>
+    <input @bind="doctor.Name" class="form-control" />
+</div>
+
+<div class="mb-3">
+    <label>القسم:</label>
+    <select @bind="doctor.DepartmentId" class="form-control">
+        <option value="0">اختر قسماً...</option>
+        @if (departments != null)
+        {
+            @foreach (var dept in departments)
+            {
+                <option value="@dept.Id">@dept.Name</option>
+            }
+        }
+    </select>
+</div>
+
+<button class="btn btn-primary" @onclick="SaveDoctor">حفظ الطبيب</button>
+
+@code {
+    private Doctor doctor = new();
+    private List<Department>? departments;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // جلب الأقسام لتعبئة القائمة المنسدلة
+        departments = await Http.GetFromJsonAsync<List<Department>>("api/Departments");
+    }
+
+    private async Task SaveDoctor()
+    {
+        await Http.PostAsJsonAsync("api/Doctors", doctor);
+        Navigation.NavigateTo("/doctors");
+    }
+
+    public class Doctor { public string Name { get; set; } = ""; public int DepartmentId { get; set; } }
+    public class Department { public int Id { get; set; } public string Name { get; set; } = ""; }
+}

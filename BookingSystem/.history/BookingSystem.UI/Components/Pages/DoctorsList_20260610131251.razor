@@ -1,0 +1,57 @@
+@page "/doctors"
+@inject HttpClient Http
+
+<h3>قائمة الأطباء</h3>
+
+@if (doctors == null)
+{
+    <p>جاري التحميل...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>التخصص</th>
+                <th>القسم</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var doctor in doctors)
+            {
+                <tr>
+                    <td>@doctor.Name</td>
+                    <td>@doctor.Specialty</td>
+                    <td>@doctor.DepartmentName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // استخدمي الكلاس الذي أنشأناه بدلاً من dynamic
+    private List<DoctorDto>? doctors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try 
+        {
+            doctors = await Http.GetFromJsonAsync<List<DoctorDto>>("api/Doctors");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"خطأ في جلب البيانات: {ex.Message}");
+        }
+    }
+
+    // تأكدي من تعريف الكلاس هنا أو في ملف منفصل
+    public class DoctorDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = "";
+        public string Specialty { get; set; } = "";
+        public string DepartmentName { get; set; } = "";
+    }
+}
