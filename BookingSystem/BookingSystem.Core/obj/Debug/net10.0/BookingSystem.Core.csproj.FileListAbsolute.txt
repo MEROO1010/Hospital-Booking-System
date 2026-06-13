@@ -5,7 +5,6 @@ C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSyste
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Core\obj\Debug\net10.0\BookingSystem.Core.AssemblyInfoInputs.cache
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Core\obj\Debug\net10.0\BookingSystem.Core.AssemblyInfo.cs
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Core\obj\Debug\net10.0\BookingSystem.Core.csproj.CoreCompileInputs.cache
-C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Core\obj\Debug\net10.0\BookingSystem.Core.sourcelink.json
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Core\obj\Debug\net10.0\BookingSystem.Core.dll
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Core\obj\Debug\net10.0\refint\BookingSystem.Core.dll
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Core\obj\Debug\net10.0\BookingSystem.Core.pdb

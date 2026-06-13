@@ -8,7 +8,6 @@ C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSyste
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Application\obj\Debug\net10.0\BookingSystem.Application.AssemblyInfoInputs.cache
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Application\obj\Debug\net10.0\BookingSystem.Application.AssemblyInfo.cs
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Application\obj\Debug\net10.0\BookingSystem.Application.csproj.CoreCompileInputs.cache
-C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Application\obj\Debug\net10.0\BookingSystem.Application.sourcelink.json
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Application\obj\Debug\net10.0\BookingS.5EAA46C0.Up2Date
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Application\obj\Debug\net10.0\BookingSystem.Application.dll
 C:\Users\DELL\C_sharp_project\Hospital-Booking-System\BookingSystem\BookingSystem.Application\obj\Debug\net10.0\refint\BookingSystem.Application.dll
